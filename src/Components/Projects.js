@@ -23,25 +23,39 @@ export const Projects = () => {
               <Grid item xs={2} sm={4} md={4} key={index.name}>
 
                 <Card style={{ backgroundColor: '#90a4ae' }}>
+
                   <CardMedia
                     sx={{ height: 140 }}
                     image={(index.image)}
                     title={index.name}
                   />
+
                   <CardContent>
-                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+
+                    <Typography sx={{ fontSize: 23 }} color="text.secondary" gutterBottom>
                       {index.name}
                     </Typography>
+
                     <Typography variant="h6" component="div">
                       {index.lenguaje}
                     </Typography>
+
                     <Typography variant="h6" component="div">
                       {index.fecha}
                     </Typography>
-                  </CardContent>
+
+                    <Typography variant="h7" component="div">
+                      {index.descripcion}
+                    </Typography>
+
+                    
+                  </CardContent>                  
 
                   <CardActions>
-                    <Button variant="contained" >Ver Repositorio</Button>
+
+                    { index.repo ?  <Button variant="contained" color='primary'>Ver Repositorio</Button> : null }
+                    { index.demo ?  <Button variant="contained" color='primary'>Ver Demo</Button> : null }                   
+
                   </CardActions>
 
                 </Card>
