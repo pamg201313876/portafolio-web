@@ -32,11 +32,11 @@ const projects = [
 
     {
         name: "INAB SEGEFOR",
-        lenguaje: "ReactJS/Java",
+        lenguaje: "ReactJS/Java/TypeScript",
         fecha: "2020",
         image:require('./../static/images/projects/segefor.png'),
         descripcion: 'Proyecto realizado para INAB inscripción de Latifoliados',
-        repo: null,        
+        repo: "https://github.com/pamg201313876/SegeforFrontend",        
         demo: null,
     },
    

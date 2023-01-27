@@ -15,36 +15,45 @@ import "./../Styles/home.css"
 export function Skills() {
   return (
 
-    <m.div className='main-div' initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.75, ease: "easeOut" }}>
-      <div className='picture-bg' style={{ padding: "25px 5px" }}>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
-          {
+    <m.div className='main-div' >
+      <br />
+      <Typography color="white" variant="h3"  >
+        Skills
+      </Typography>
+      <br />
+      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
+        {
 
-            itemData.map((index) => (
-              <Grid item xs={2} sm={4} md={4} key={index.title}>
+          itemData.map((index) => (
+            <Grid item xs={2} sm={4} md={4} key={index.title}>
 
-                <Card style={{ backgroundColor: '#white' }}>
+              <Card style={{ backgroundColor: '#white' }}>
 
-                  <CardMedia
-                    sx={{ height: 140 }}
-                    image={(index.img)}
-                    title={index.title}
-                  />
+                <CardMedia
+                  sx={{ height: 140 }}
+                  image={(index.img)}
+                  title={index.title}
+                />
 
-                  <CardContent>
+                <CardContent>
 
-                    <Typography sx={{ fontSize: 23 }} color="text.secondary" gutterBottom>
-                      {index.title}
-                    </Typography>                  
+                  <Typography sx={{ fontSize: 23 }} color="text.secondary" gutterBottom>
+                    {index.title}
+                  </Typography>
 
+                  {index.curso ?
+                    <Button href={index.curso}  target="_blank" variant="contained" color='primary'>
+                      Watch the Course
+                    </Button>
+                    : null
+                  }
 
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))
-          }
-        </Grid>
-      </div>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))
+        }
+      </Grid>
     </m.div>
   );
 }

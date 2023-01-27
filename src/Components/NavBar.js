@@ -7,25 +7,21 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function NavBar() {
-
-    const navigate = useNavigate();
-
-    const redirect = (path) => {
-        navigate(path)
-    }
+export default function NavBar({scrollToSection, home, project, skills, contact}) {
+    
 
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        Welcome to my Briefcase
                     </Typography>
 
-                    <Button color='inherit' onClick={() => redirect('/')} >Home</Button>
-                    <Button color='inherit' onClick={() => redirect('/projects')} >Projects</Button>
-                    <Button color='inherit' onClick={() => redirect('/skills')} >Skills</Button>
-                    <Button color='inherit' onClick={() => redirect('/contact')} >Contact</Button>
+                    <Button onClick={() => scrollToSection(home)} color='inherit'  >Home</Button>
+                    <Button onClick={() => scrollToSection(project)} color='inherit' >Projects</Button>
+                    <Button onClick={() => scrollToSection(skills)} color='inherit' >Skills</Button>
+                    <Button onClick={() => scrollToSection(contact)} color='inherit'  >Contact</Button>
 
                 </Toolbar>
             </AppBar>
