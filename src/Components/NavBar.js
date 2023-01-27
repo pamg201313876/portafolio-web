@@ -24,8 +24,8 @@ export default function NavBar() {
 
                     <Button color='inherit' onClick={() => redirect('/')} >Home</Button>
                     <Button color='inherit' onClick={() => redirect('/projects')} >Projects</Button>
-                    <Button color='inherit' onClick={() => redirect('/experience')} >Skills</Button>
-                    <Button color='inherit' onClick={() => redirect('/knowledge')} >Experience</Button>
+                    <Button color='inherit' onClick={() => redirect('/skills')} >Skills</Button>
+                    <Button color='inherit' onClick={() => redirect('/contact')} >Contact</Button>
 
                 </Toolbar>
             </AppBar>

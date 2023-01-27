@@ -11,18 +11,19 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
 import "./../Styles/home.css"
+import {motion as m} from "framer-motion"
 
 export const Projects = () => {
   return (
-    <div className='main-div'>
-      <div className='picture-bg'>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <m.div className='main-div' initial={{opacity: 0}} animate={{opacity: 1}}  transition={{duration: 0.75, ease: "easeOut"}}>
+      <div className='picture-bg' style={{padding: "25px 5px"}}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }} >
           {
 
             projects.map((index) => (
               <Grid item xs={2} sm={4} md={4} key={index.name}>
 
-                <Card style={{ backgroundColor: '#90a4ae' }}>
+                <Card style={{ backgroundColor: 'white' }}>
 
                   <CardMedia
                     sx={{ height: 140 }}
@@ -53,8 +54,8 @@ export const Projects = () => {
 
                   <CardActions>
 
-                    { index.repo ?  <Button variant="contained" color='primary'>Ver Repositorio</Button> : null }
-                    { index.demo ?  <Button variant="contained" color='primary'>Ver Demo</Button> : null }                   
+                    { index.repo ?  <Button href={index.repo} target="_blank" variant="contained" color='primary'>Ver Repositorio</Button> : null }
+                    { index.demo ?  <Button href={index.demo} target="_blank" variant="contained" color='primary'>Ver demo</Button> : null }                   
 
                   </CardActions>
 
@@ -64,7 +65,7 @@ export const Projects = () => {
           }
         </Grid>
       </div>
-    </div>
+    </m.div>
   )
 
 }
